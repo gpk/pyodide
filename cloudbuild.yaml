@@ -11,6 +11,6 @@ steps:
   env:
     - "EMSDK_NUM_CORES=8"
     - "EMCC_CORES=8"
-timeout: 1800s
+timeout: 7200s
 options:
   machineType: N1_HIGHCPU_8
