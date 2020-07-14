@@ -1,6 +1,12 @@
 steps:
 - name: "ubuntu"
   args: ["echo", "hello world"]
+- name: "ubuntu"
+  args: ["pwd"]
+- name: "ubuntu"
+  args: ["touch", "myfile"]
+- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  args: ["gsutil", "cp", "myfile", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     "run",
@@ -11,6 +17,18 @@ steps:
   env:
     - "EMSDK_NUM_CORES=8"
     - "EMCC_CORES=8"
+- name: "ubuntu"
+  args: ["ls", "build"]
+- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  args: ["gsutil", "cp", "build/*.js", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
+- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  args: ["gsutil", "cp", "build/*.html", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
+- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  args: ["gsutil", "cp", "build/*.data", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
+- name: "ubuntu"
+  args: ["tar", "czvf", "build.tar.gz", "build"]
+- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  args: ["gsutil", "cp", "build.tar.gz", "gs://pwetc/"]
 timeout: 7200s
 options:
   machineType: N1_HIGHCPU_8
