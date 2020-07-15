@@ -12,7 +12,7 @@ steps:
     "run",
     "--user", "root",
     "gcr.io/program-world-dev/gpk-pyodide:v20200715",
-    "/bin/bash -c 'ls /'"]
+    "/bin/bash", "-c", "ls /"]
   env:
     - "EMSDK_NUM_CORES=8"
     - "EMCC_CORES=8"
