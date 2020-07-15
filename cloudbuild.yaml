@@ -7,11 +7,12 @@ steps:
   args: ["touch", "myfile"]
 - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
   args: ["gsutil", "cp", "myfile", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
+- name: "ubuntu"
+  args: ["cp", "-r", "/workspace/*", "/src/"]
 - name: "gcr.io/cloud-builders/docker"
   args: [
     "run",
     "--user", "root",
-    "-v", "/workspace:/src",
     "gcr.io/program-world-dev/gpk-pyodide:v20200715",
     "make"]
   env:
