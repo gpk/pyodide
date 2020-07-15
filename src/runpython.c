@@ -71,7 +71,7 @@ EM_JS(int, runpython_init_js, (), {
 
   Module.steveTest = function(code)
   {
-    Module.print("from steveText");
+    Module.print("from steveTest");
     return 77;
   };
 
