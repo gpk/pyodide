@@ -2,13 +2,13 @@ steps:
 - name: "ubuntu"
   args: ["echo", "hello world"]
 - name: "ubuntu"
+  args: ["ls", "/"]
+- name: "ubuntu"
   args: ["pwd"]
 - name: "ubuntu"
   args: ["touch", "myfile"]
 - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
   args: ["gsutil", "cp", "myfile", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
-- name: "ubuntu"
-  args: ["cp", "-r", "/workspace/*", "/src/"]
 - name: "gcr.io/cloud-builders/docker"
   args: [
     "run",
