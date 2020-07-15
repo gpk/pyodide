@@ -13,7 +13,7 @@ steps:
     "--user", "root",
     "-v", "/workspace:/src",
     "gcr.io/program-world-dev/gpk-pyodide:v20200715",
-    "/bin/bash", "-c", '"time make"']
+    "/bin/bash", "-c", '"cd /src && make"']
   env:
     - "EMSDK_NUM_CORES=8"
     - "EMCC_CORES=8"
