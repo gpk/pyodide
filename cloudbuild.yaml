@@ -13,7 +13,7 @@ steps:
     "--user", "root",
     "-v", "/workspace:/workspace",
     "gcr.io/program-world-dev/gpk-pyodide:v20200715",
-    "/bin/bash", "-c", "ls /workspace && cp -r /workspace/* /src/ && cd /src && ls"]
+    "/bin/bash", "-c", "pwd && ls /workspace && cp -r /workspace/* /src/ && cd /src && ls && du -hs ."]
   env:
     - "EMSDK_NUM_CORES=8"
     - "EMCC_CORES=8"
