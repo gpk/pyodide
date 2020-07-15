@@ -2,8 +2,6 @@ steps:
 - name: "ubuntu"
   args: ["echo", "hello world"]
 - name: "ubuntu"
-  args: ["ls", "/"]
-- name: "ubuntu"
   args: ["pwd"]
 - name: "ubuntu"
   args: ["touch", "myfile"]
@@ -14,7 +12,7 @@ steps:
     "run",
     "--user", "root",
     "gcr.io/program-world-dev/gpk-pyodide:v20200715",
-    "make"]
+    "/bin/bash -c 'ls /'"]
   env:
     - "EMSDK_NUM_CORES=8"
     - "EMCC_CORES=8"
