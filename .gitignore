@@ -35,3 +35,5 @@ packages/libxml/libxml*
 packages/libxslt/libxslt*
 packages/libiconv/libiconv*
 packages/zlib/zlib*
+
+.python-version

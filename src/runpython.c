@@ -69,12 +69,6 @@ EM_JS(int, runpython_init_js, (), {
     return Module._runPythonInternal(pycode);
   };
 
-  Module.steveTest = function(code)
-  {
-    console.log("EM_JS steveTest");
-    return 77;
-  };
-
   Module.runPythonAsync = function(code, messageCallback, errorCallback)
   {
     var pycode = allocate(intArrayFromString(code), 'i8', ALLOC_NORMAL);

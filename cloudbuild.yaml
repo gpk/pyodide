@@ -7,7 +7,7 @@ steps:
   args: ["touch", "myfile"]
 - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
   args: ["gsutil", "cp", "myfile", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
-- name: 'gcr.io/cloud-builders/docker'
+- name: "gcr.io/cloud-builders/docker"
   args: [
     "run",
     "--user", "root",
@@ -20,11 +20,8 @@ steps:
 - name: "ubuntu"
   args: ["ls", "build"]
 - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-  args: ["gsutil", "cp", "build/*.js", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
-- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-  args: ["gsutil", "cp", "build/*.html", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
-- name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-  args: ["gsutil", "cp", "build/*.data", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
+  args: ["gsutil", "cp", "-h", '"Cache-Control:public, max-age=3600"',
+         "build/*", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
 - name: "ubuntu"
   args: ["tar", "czvf", "build.tar.gz", "build"]
 - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
