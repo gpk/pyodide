@@ -8,11 +8,11 @@ steps:
     "-v", "/workspace:/workspace",
     "gcr.io/program-world-dev/gpk-pyodide:v20200716h",
     "/rsync_and_make.sh"]
-  env:
-    - "EMSDK_NUM_CORES=8"
-    - "EMCC_CORES=8"
+  # env:
+  #   - "EMSDK_NUM_CORES=8"
+  #   - "EMCC_CORES=8"
 - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
   args: ["gsutil", "cp", "/workspace/build/*", "gs://dev.gpkpw.com/gpk-pyodide/$BRANCH_NAME/"]
 timeout: 7200s
-options:
-  machineType: N1_HIGHCPU_8
+# options:
+#   machineType: N1_HIGHCPU_8
