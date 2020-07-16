@@ -65,14 +65,14 @@ EM_JS(int, runpython_init_js, (), {
 
   Module.runPython = function(code)
   {
-    Module.print("running python foo");
+    console.log("running python foo");
     var pycode = allocate(intArrayFromString(code), 'i8', ALLOC_NORMAL);
     return Module._runPythonInternal(pycode);
   };
 
-  Module.steveTest = function(code)
+  Module.steveTest = function()
   {
-    Module.print("from steveTest");
+    console.log("from steveTest");
     return 77;
   };
 
