@@ -72,9 +72,9 @@ EM_JS(int, runpython_init_js, (), {
 
   Module.steveTest = function()
   {
-    printf("from steveTest 1\n");
+    console.log("from steveTest 1\n");
     emscripten_sleep(2000);
-    printf("from steveTest 2\n");
+    console.log("from steveTest 2\n");
     return 77;
   };
 
