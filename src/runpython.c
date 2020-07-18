@@ -73,7 +73,8 @@ EM_JS(int, runpython_init_js, (), {
   Module.steveTest = function()
   {
     console.log("from steveTest 1\n");
-    emscripten_sleep_with_yield(2000);
+    console.log(emscripten_get_device_pixel_ratio());
+    // emscripten_sleep(2000);
     console.log("from steveTest 2\n");
     return 77;
   };
