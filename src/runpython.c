@@ -70,18 +70,19 @@ EM_JS(int, runpython_init_js, (), {
     return Module._runPythonInternal(pycode);
   };
 
-  Module.steveTest = function()
+  Module.emTest = function()
   {
-    console.log("from steveTest 1\n");
-    Module.runPython("print('before')");
-    console.log(Module._emscripten_get_device_pixel_ratio());
+    console.log("before");
     console.log(Module._emscripten_sleep(4000));
     console.log(Module._sleep(4));
-    console.log(Module._emscripten_get_device_pixel_ratio());
-    Module.runPython("print('after')");
-    // emscripten_sleep(2000);
-    console.log("from steveTest 2\n");
-    return 77;
+    console.log("after");
+    return 1;
+  };
+
+  Module.emSleep = function(durationSeconds)
+  {
+    console.log(Module._sleep(durationSeconds));
+    return 1;
   };
 
   Module.runPythonAsync = function(code, messageCallback, errorCallback)
