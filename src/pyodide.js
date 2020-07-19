@@ -310,6 +310,7 @@ var languagePluginLoader = new Promise((resolve, reject) => {
     'checkABI',
     'version',
     'autocomplete',
+    'emSleep',
   ];
 
   function makePublicAPI(module, public_api) {
