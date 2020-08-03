@@ -312,6 +312,7 @@ var languagePluginLoader = new Promise((resolve, reject) => {
     'autocomplete',
     'emSleep1',
     'emSleep2',
+    'emSleep3',
   ];
 
   function makePublicAPI(module, public_api) {
