@@ -73,7 +73,7 @@ EM_JS(int, runpython_init_js, (), {
   Module.emTest = function()
   {
     console.log("before");
-    console.log(Module._emscripten_sleep(4000));
+    console.log(Module._emscripten_sleep(4000000));
     console.log("after");
     return 1;
   };
