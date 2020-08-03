@@ -21,10 +21,6 @@ _runPython(char* code)
     return pythonexc2js();
   }
 
-  printf("sleeping...\n");
-  emscripten_sleep(2000);
-  printf("...done sleeping\n");
-
   PyObject* ret =
     PyObject_CallFunctionObjArgs(eval_code, py_code, globals, NULL);
 
@@ -85,7 +81,6 @@ EM_JS(int, runpython_init_js, (), {
 
   Module.emSleep1 = function(durationSeconds)
   {
-    console.log(Module._sleep);
     return Module._sleep(durationSeconds);
   };
 
