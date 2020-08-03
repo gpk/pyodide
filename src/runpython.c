@@ -81,14 +81,17 @@ EM_JS(int, runpython_init_js, (), {
 
   Module.emSleep1 = function(durationSeconds)
   {
-    Module._sleep(durationSeconds);
-    return 1;
+    return Module._sleep(durationSeconds);
   };
 
   Module.emSleep2 = function(durationSeconds)
   {
-    Module._emscripten_sleep(durationSeconds * 1000);
-    return 1;
+    return Module._emscripten_sleep(durationSeconds * 1000);
+  };
+
+  Module.emSleep3 = function(durationSeconds)
+  {
+    return Asyncify.handleAsync
   };
 
   Module.runPythonAsync = function(code, messageCallback, errorCallback)
