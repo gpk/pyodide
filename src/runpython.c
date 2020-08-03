@@ -81,6 +81,7 @@ EM_JS(int, runpython_init_js, (), {
 
   Module.emSleep1 = function(durationSeconds)
   {
+    console.log(Module._sleep)
     return Module._sleep(durationSeconds);
   };
 
