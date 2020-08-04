@@ -6,7 +6,7 @@ steps:
     "run",
     "--user", "root",
     "-v", "/workspace:/workspace",
-    "gcr.io/program-world-dev/gpk-pyodide:asyncify-v20200717a",
+    "gcr.io/program-world-dev/gpk-pyodide:v20200715",
     "/rsync_and_make.sh"]
   env:
     - "EMSDK_NUM_CORES=8"
